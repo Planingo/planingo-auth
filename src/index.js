@@ -29,11 +29,14 @@ app.use(async (ctx, next) => {
   try {
     await next()
   } catch (err) {
-    if (!err.expose) throw err
-
     console.error('Error while handling', ctx.URL.pathname, ':', err)
-    ctx.body = { message: err.message, code: `${err.status}` }
-    ctx.status = err.status
+    if (err.expose) {
+      ctx.body = { message: err.message, code: `${err.status || 500}` }
+      ctx.status = err.status
+    } else {
+      ctx.body = { message: "Unexpected server error", code: `${err.status || 500}` }
+      ctx.status = err.status || 500
+    }
   }
 })
 app.use(bodyParser())
