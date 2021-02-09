@@ -2,7 +2,7 @@
   "name": "@foodex/auth",
   "version": "1.0.0",
   "main": "src/index.js",
-  "repository": "https://github.com/EmrysMyrddin/foodex",
+  "repository": "https://github.com/Bugsyaya/planingo-auth",
   "author": "Valentin Cocaud (v.cocaud@gmail.com)",
   "license": "MIT",
   "private": false,
