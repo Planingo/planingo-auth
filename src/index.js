@@ -32,7 +32,7 @@ app.use(async (ctx, next) => {
     if (!err.expose) throw err
 
     console.error('Error while handling', ctx.URL.pathname, ':', err)
-    ctx.body = { message: err.message, code: err.status }
+    ctx.body = { message: err.message, code: `${err.status}` }
     ctx.status = err.status
   }
 })
