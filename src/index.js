@@ -13,9 +13,9 @@ router.post('/login', async (ctx) => {
   ctx.body = await service.login(ctx.request.body.input)
 })
 
-router.post('/user', async (ctx) => {
+router.post('/account', async (ctx) => {
   checkFields(['email', 'password'], ctx.request.body.input)
-  ctx.body = await service.createUser(ctx.request.body.input)
+  ctx.body = await service.createAccount(ctx.request.body.input)
 })
 
 function checkFields (fields, input) {
