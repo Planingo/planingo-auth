@@ -25,6 +25,17 @@ function checkFields (fields, input) {
   }
 }
 
+app.use(async (ctx, next) => {
+  try {
+    await next()
+  } catch (err) {
+    if (!err.expose) throw err
+
+    console.error('Error while handling', ctx.URL.pathname, ':', err)
+    ctx.body = { message: err.message, code: err.status }
+    ctx.status = err.status
+  }
+})
 app.use(bodyParser())
 app.use(router.routes())
 app.use(router.allowedMethods())
