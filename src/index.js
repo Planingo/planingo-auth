@@ -21,7 +21,7 @@ router.post('/account', async (ctx) => {
 function checkFields (fields, input) {
   const missingFields = fields.filter(field => !input[field])
   if (missingFields.length !== 0) {
-    throw error(400, 'missing fields ${missingFields.join(', ')}')
+    throw error(400, `missing fields ${missingFields.join(', ')}`)
   }
 }
 
