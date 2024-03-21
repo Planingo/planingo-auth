@@ -44,7 +44,7 @@ async function getAccount (email) {
 async function insertAccount (accountInput) {
   const { data: { account } } = await query({
     query: `mutation($email: String!, $password: String!) {
-      account: insert_account_one(object: { email: $email, password: $password }) {
+      account: insert_account_one(object: { email: $email, password: $password, user: {data: {}} }) {
         id
       }
     }`,

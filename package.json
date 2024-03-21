@@ -1,11 +1,10 @@
 {
-  "name": "@foodex/auth",
+  "name": "@pixel-brew/root-gate",
   "version": "1.0.0",
   "main": "src/index.js",
-  "repository": "https://github.com/Bugsyaya/planingo-auth",
-  "author": "Valentin Cocaud (v.cocaud@gmail.com)",
+  "repository": "https://github.com/Planingo/root-gate",
+  "author": "Valentin Cocaud (valentin.cocaud@pixel-brew.com)",
   "license": "MIT",
-  "private": false,
   "scripts": {
     "dev": "nodemon .",
     "start": "NODE_ENV=production node .",
@@ -21,5 +20,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-  }
+  },
+  "packageManager": "yarn@4.1.1"
 }
